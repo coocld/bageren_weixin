@@ -1,0 +1,93 @@
+page{background-color:#fff!important;}
+
+.newTitle{
+  height: 95rpx;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.title-input{
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  margin: 0 auto;
+}
+.newContent{
+  width: 750rpx;
+}
+.contentTextarea{
+  width: 670rpx;
+  margin: 20rpx;
+  background: #f5f6f7;
+  min-height: 230rpx;
+  padding: 30rpx 20rpx;
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #f5f6f7;
+}
+.newBanner{
+  width: 750rpx;
+  height: 115rpx;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+.banner-item{
+  margin:40rpx 50rpx;
+  height: 35rpx;
+  overflow: hidden;
+  width: 650rpx;
+}
+.newBanner .icon-l{
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+  background: url(https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/icon1.png) no-repeat;
+  background-size: 100% 100%;
+  float: left;
+}
+.icon-r{
+  display: block;
+  width: 45rpx;
+  height: 45rpx;
+  float: right;
+  background: url(https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/rig.png) no-repeat;
+  background-size: 100% 100%;
+}
+.lable-c{
+   padding-left: 20rpx;
+}
+.newType{
+  width: 750rpx;
+  height: 115rpx;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+.newItem{
+  margin:40rpx 50rpx;
+  height: 35rpx;
+  overflow: hidden;
+  width: 650rpx;
+}
+.newType .icon-l{
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+  background: url(https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/icon2.png) no-repeat;
+  background-size: 100% 100%;
+  float: left;
+}
+.btnbot{
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 50rpx;
+}
+.btnSub{
+  width: 700rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+}

@@ -13,6 +13,7 @@
     "pages/user_goods_collection/index",
     "pages/user_address_list/index",
     "pages/news_list/index",
+    "pages/news_add/index",
     "pages/user_phone/index",
     "pages/user_pwd_edit/index",
     "pages/goods_search/index",

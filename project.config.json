@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -117,6 +117,12 @@
 					"name": "pages/activity/goods_seckill_details/index",
 					"pathName": "pages/activity/goods_seckill_details/index",
 					"query": "id=57&time=1591329600&status=1&scene=329",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/news_add/index",
+					"pathName": "pages/news_add/index",
 					"scene": null
 				}
 			]

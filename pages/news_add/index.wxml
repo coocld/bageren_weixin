@@ -1,0 +1,32 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class="addNew">
+   <view class="newTitle">
+      <input class="title-input" placeholder="标题" />
+   </view>
+   <view class="newContent">
+      <textarea class="contentTextarea" auto-height placeholder="说点什么吧"/>
+   </view>
+   <view class="line"></view>
+   <view class="newBanner">
+      <view class="banner-item" bindtap='addImg'>
+         <text class="icon-l"></text>
+         <text class="lable-c">上传图片</text>
+         <text class="icon-r"></text> 
+      </view>
+      <view class="banner-image" wx:if="{{bannerUrl}}"><image mode="aspectFill" src="{{bannerUrl}}"></image></view>
+   </view>
+   <view class="newType">
+      <view class="newItem">
+         <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}">
+            <text class="icon-l"></text>
+            <text class="lable-c">选择模块</text>
+            <text class="cont">{{typeList[index]}}</text>
+            <text class="icon-r"></text>
+         </picker>
+      </view>
+   </view>
+   <view class="btnbot">
+      <button class="btnSub" type="primary" loading="">发布</button>
+   </view>
+</view>
+<!-- <home></home> -->
