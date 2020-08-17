@@ -95,6 +95,14 @@ export function getArticleBannerList(){
 export function getArticleDetails(id){
   return request.get('article/details/'+id,{},{noAuth:true});
 }
+/**
+ * 添加编辑文章
+ * @param int id 
+ * 
+*/
+export function addArticle(data){
+  return request.post('article/add',data,{noAuth:true});
+}
 
 /**
  * 手机号+验证码登录接口

@@ -90,4 +90,9 @@ page{background-color:#fff!important;}
   height: 80rpx;
   line-height: 80rpx;
   margin: 0 auto;
+  color: #999!important;
+}
+.btnSubWarn{
+  background: #fc4141!important;
+  color: #fff!important;
 }

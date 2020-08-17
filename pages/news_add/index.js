@@ -1,4 +1,4 @@
-import { getArticleCategoryList, getArticleList, getArticleHotList, getArticleBannerList} from '../../api/api.js';
+import {addArticle} from '../../api/api.js';
 
 
 const app = getApp();
@@ -14,8 +14,10 @@ Page({
       'title': '发布',
       'color': false
     },
-    typeList: ['供应信息', '求购信息'],
-    bannerUrl: ''
+    typeList: ['求购', '供应'],
+    bannerUrl: '',
+    cid: '1',
+    content: ''
   },
 
   /**
@@ -73,9 +75,13 @@ Page({
 
   },
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      cid: e.detail.value
+    })
+  },
+  bindTextAreaBlur: function(e) {
+    this.setData({
+      content: e.detail.value
     })
   },
    /**
@@ -92,23 +98,24 @@ Page({
           wx.chooseImage({
             sizeType: ['original'],//原图
             sourceType: [choseType],
-            count: 1,//每次添加一张
+            count: 6,//每次添加一张
             success: function (res) {
-              wx.showLoading({
-                title: '图片上传中',
-              })
-              wx.uploadFile({
-                url: 'http://127.0.0.1/admin/widget.images/upload', // 仅为示例，非真实的接口地址
-                filePath: res.tempFilePaths[0],
-                name: 'file',
-                success: function(updata) {
-                  console.log(updata.data)
-                  // that.setData({
-                  //   bannerUrl:JSON.parse(updata.data).src
-                  // })
-                  wx.hideLoading()
-                }
-              })
+              console.log(res.tempFilePaths)
+              // wx.showLoading({
+              //   title: '图片上传中',
+              // })
+              // wx.uploadFile({
+              //   url: 'http://127.0.0.1/admin/widget.images/upload', // 仅为示例，非真实的接口地址
+              //   filePath: res.tempFilePaths[0],
+              //   name: 'file',
+              //   success: function(updata) {
+              //     console.log(updata.data)
+              //     // that.setData({
+              //     //   bannerUrl:JSON.parse(updata.data).src
+              //     // })
+              //     wx.hideLoading()
+              //   }
+              // })
             }
           })
         }
@@ -118,4 +125,17 @@ Page({
       }
     })
   },
+  addNew(){
+    var that = this;
+    var newDataObj = {
+      cid: that.data.cid,
+      author: '大作者',
+      image_input: '',
+      content: that.data.content,
+    }
+    console.log(newDataObj)
+    // addArticle(newDataObj).then(res=>{
+    //   console.log(res);
+    // });
+  }
 })

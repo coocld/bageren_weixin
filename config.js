@@ -1,8 +1,8 @@
 module.exports = {
   // 请求域名 格式： https://您的域名
-  HTTP_REQUEST_URL:'http://47.105.202.135',
+  HTTP_REQUEST_URL:'http://127.0.0.1',
   // Socket链接 暂不做配置
-  WSS_SERVER_URL:'ws://47.105.202.135:20002',
+  WSS_SERVER_URL:'ws://127.0.0.1:20002',
 
 
   // 以下配置非开发者，无需修改

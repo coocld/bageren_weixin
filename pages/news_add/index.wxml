@@ -1,10 +1,10 @@
 <navbar parameter='{{parameter}}'></navbar>
 <view class="addNew">
-   <view class="newTitle">
+   <!-- <view class="newTitle">
       <input class="title-input" placeholder="标题" />
-   </view>
+   </view> -->
    <view class="newContent">
-      <textarea class="contentTextarea" auto-height placeholder="说点什么吧"/>
+      <textarea bindinput="bindTextAreaBlur" class="contentTextarea" value="{{content}}" auto-height placeholder="说点什么吧"/>
    </view>
    <view class="line"></view>
    <view class="newBanner">
@@ -26,7 +26,8 @@
       </view>
    </view>
    <view class="btnbot">
-      <button class="btnSub" type="primary" loading="">发布</button>
+      <button class="btnSub" type="default" wx:if="{{!content}}" >发布</button>
+      <button class="btnSub btnSubWarn" type="warn" loading="" bindtap="addNew" wx:else >发布</button>
    </view>
 </view>
 <!-- <home></home> -->
