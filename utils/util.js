@@ -368,6 +368,65 @@ const uploadImageOne=function (opt, successCallback, errorCallback) {
     }
   })
 }
+/*
+* 多图上传
+* @param object opt
+* @param callable successCallback 成功执行方法 data 
+* @param callable errorCallback 失败执行方法 
+*/
+const uploadImageMore=function (opt, successCallback, errorCallback) {
+  if (typeof opt === 'string') {
+    var url = opt;
+    opt = {};
+    opt.url = url;
+  }
+  var count = opt.count || 1, sizeType = opt.sizeType || ['compressed'], sourceType = opt.sourceType || ['album', 'camera'],
+    uploadUrl = opt.url || '', inputName = opt.name || 'pics';
+  wx.chooseImage({
+    count: count,  //最多可以选择的图片总数  
+    sizeType: sizeType, // 可以指定是原图还是压缩图，默认二者都有  
+    sourceType: sourceType, // 可以指定来源是相册还是相机，默认二者都有  
+    success: function (res) {
+      //启动上传等待中...  
+      var length = res.tempFilePaths.length; //总数
+      var imgArr = [];
+      for(let i=0; i<length; i++){
+        console.log(i)
+        wx.showLoading({
+          title: '正在上传第'+(i+1)+'张',
+        })
+        wx.uploadFile({
+          url: getApp().globalData.url+'/api/'+uploadUrl,
+          filePath: res.tempFilePaths[i],
+          name: inputName,
+          formData: {
+            'filename': inputName
+          },
+          header: {
+            "Content-Type": "multipart/form-data",
+            [TOKENNAME]: 'Bearer '+getApp().globalData.token
+          },
+          success: function (res) {
+            let dataobj = res.data ? JSON.parse(res.data) : {};
+            imgArr.push(dataobj.data.url);
+            wx.hideLoading();
+            if(i>=length-1){
+              successCallback && successCallback(imgArr)
+            }
+            
+          }, 
+          fail: function (res) {
+            wx.hideLoading();
+            console.log(res)
+            Tips({ title: '第'+(i+1)+'上传失败' });
+          },
+         
+        })
+      }
+      
+    }
+  })
+}
 
 /**
  * 移除数组中的某个数组并组成新的数组返回
@@ -541,5 +600,6 @@ module.exports = {
   checkLogin: checkLogin,
   wxgetUserInfo: wxgetUserInfo,
   autoLogin: autoLogin,
-  logout: logout
+  logout: logout,
+  uploadImageMore
 }

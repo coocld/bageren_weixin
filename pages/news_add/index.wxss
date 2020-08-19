@@ -15,12 +15,12 @@ page{background-color:#fff!important;}
 }
 .newContent{
   width: 750rpx;
+  height: auto;
 }
 .contentTextarea{
   width: 670rpx;
   margin: 20rpx;
-  background: #f5f6f7;
-  min-height: 230rpx;
+  min-height: 130rpx;
   padding: 30rpx 20rpx;
 }
 .line{
@@ -95,4 +95,63 @@ page{background-color:#fff!important;}
 .btnSubWarn{
   background: #fc4141!important;
   color: #fff!important;
+}
+.clear{
+  clear: both;
+  
+}
+.image-list{
+  padding: 20rpx;
+  display: flex;
+  flex-flow: wrap;
+}
+.image-wrap{
+  position: relative;
+  width: 228rpx;
+  height: 228rpx;
+  margin: .5%;
+  width: 32%;
+  box-sizing: border-box;
+}
+.image-wrap .img{
+  width: 228rpx;
+  height: 228rpx;
+}
+.m-rpic-close{
+  position: absolute;
+  width: 42rpx;
+  height: 42rpx;
+  top: 0;
+  right: 0;
+  opacity: .4;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: none;
+  background: url('https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20190514/close02.png') #000 no-repeat;
+  background-size: 100% 100%;
+}
+.m-rpic-close .img{
+  width: 42rpx;
+  height: 42rpx;
+}
+.selectphoto{
+  border: 1px dashed #cbd1d7;
+  display: flex;
+  justify-content: center;
+}
+.more-image:after, .more-image:before {
+  content: "";
+  width: 1.875rem;
+  height: 1px;
+  background-color: #cbd1d7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.more-image:after {
+  -webkit-transform: translate(-50%,-50%) rotate(90deg);
+  transform: translate(-50%,-50%) rotate(90deg);
 }

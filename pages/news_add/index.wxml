@@ -5,16 +5,25 @@
    </view> -->
    <view class="newContent">
       <textarea bindinput="bindTextAreaBlur" class="contentTextarea" value="{{content}}" auto-height placeholder="说点什么吧"/>
+      <view class="clear"></view>
+      <view class="image-list">
+         <view class="image-wrap" wx:for="{{imageList}}" wx:if="{{item}}" wx:key="unique">
+            <image class="img" src="{{item}}"></image>
+            <view class="m-rpic-close" bindtap="delImgItem" data-index="{{index}}"></view>
+         </view>
+         
+         <view class="selectphoto image-wrap more-image" bindtap='addImg' wx:if="{{showAddBtn}}"></view>
+      </view>
    </view>
    <view class="line"></view>
-   <view class="newBanner">
+   <!-- <view class="newBanner">
       <view class="banner-item" bindtap='addImg'>
          <text class="icon-l"></text>
          <text class="lable-c">上传图片</text>
          <text class="icon-r"></text> 
       </view>
       <view class="banner-image" wx:if="{{bannerUrl}}"><image mode="aspectFill" src="{{bannerUrl}}"></image></view>
-   </view>
+   </view> -->
    <view class="newType">
       <view class="newItem">
          <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}">

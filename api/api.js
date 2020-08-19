@@ -101,7 +101,7 @@ export function getArticleDetails(id){
  * 
 */
 export function addArticle(data){
-  return request.post('article/add',data,{noAuth:true});
+  return request.post('article/add',data,{noAuth:false});
 }
 
 /**

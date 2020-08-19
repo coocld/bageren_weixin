@@ -1,5 +1,6 @@
 import {addArticle} from '../../api/api.js';
-
+import Util from '../../utils/util.js';
+let imageListArr = []
 
 const app = getApp();
 Page({
@@ -15,9 +16,10 @@ Page({
       'color': false
     },
     typeList: ['求购', '供应'],
-    bannerUrl: '',
+    imageList: [],
     cid: '1',
-    content: ''
+    content: '',
+    showAddBtn: true
   },
 
   /**
@@ -89,40 +91,29 @@ Page({
    */
   addImg: function () {
     let that = this;
-    wx.showActionSheet({
-      itemList: ['从相册选择', '拍照'],
-      itemColor: '#00923f',
-      success: function (res) {
-        var choseType = res.tapIndex == 0 ? "album" : res.tapIndex == 1 ? "camera" : "";
-        if (choseType != "") {
-          wx.chooseImage({
-            sizeType: ['original'],//原图
-            sourceType: [choseType],
-            count: 6,//每次添加一张
-            success: function (res) {
-              console.log(res.tempFilePaths)
-              // wx.showLoading({
-              //   title: '图片上传中',
-              // })
-              // wx.uploadFile({
-              //   url: 'http://127.0.0.1/admin/widget.images/upload', // 仅为示例，非真实的接口地址
-              //   filePath: res.tempFilePaths[0],
-              //   name: 'file',
-              //   success: function(updata) {
-              //     console.log(updata.data)
-              //     // that.setData({
-              //     //   bannerUrl:JSON.parse(updata.data).src
-              //     // })
-              //     wx.hideLoading()
-              //   }
-              // })
-            }
-          })
-        }
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
+
+    Util.uploadImageMore({count:6, url: 'upload/image', inputName: 'file'}, function(res){
+      console.log(res)
+      if(that.data.imageList.length>0){
+        imageListArr = that.data.imageList
+        imageListArr = imageListArr.concat(res)
+      }else{
+        imageListArr = res
       }
+      console.log(imageListArr)
+      if(imageListArr.length>=6){
+        that.setData({
+          showAddBtn: false
+        })
+      }else{
+        that.setData({
+          showAddBtn: true
+        })
+      }
+      that.setData({
+        imageList: imageListArr
+      })
+     
     })
   },
   addNew(){
@@ -137,5 +128,13 @@ Page({
     // addArticle(newDataObj).then(res=>{
     //   console.log(res);
     // });
+  },
+  delImgItem(e){
+    let index = e.target.dataset.index;
+    let newImageArr = this.data.imageList;
+        newImageArr = newImageArr.splice(index);
+    this.setData({
+      imageList: newImageArr
+    })
   }
 })

@@ -123,6 +123,14 @@
 					"id": -1,
 					"name": "pages/news_add/index",
 					"pathName": "pages/news_add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_list/index",
+					"pathName": "pages/order_list/index",
+					"query": "id=57&time=1591329600&status=1&scene=329",
 					"scene": null
 				}
 			]
