@@ -80,6 +80,7 @@
         "poster-poster/index",
         "user_goods_bargain_list/index"
       ]
+     
     },
     {
       "root": "pages/admin",

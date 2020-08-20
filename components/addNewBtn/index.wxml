@@ -1,0 +1,5 @@
+<view class="addNewBtn" catchtap="addNewClick">
+   <view class="addNewIcon"></view>
+   <view class="addNewText">添加信息</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>

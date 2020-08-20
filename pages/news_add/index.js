@@ -1,8 +1,8 @@
 import {addArticle} from '../../api/api.js';
 import Util from '../../utils/util.js';
 let imageListArr = []
+const app = getApp()
 
-const app = getApp();
 Page({
 
   /**
@@ -12,12 +12,12 @@ Page({
     parameter: {
       'navbar': '1',
       'return': '1',
-      'title': '发布',
+      'title': '',
       'color': false
     },
     typeList: ['求购', '供应'],
     imageList: [],
-    cid: '1',
+    cid: 1,
     content: '',
     showAddBtn: true
   },
@@ -86,6 +86,11 @@ Page({
       content: e.detail.value
     })
   },
+  bindTextTitleBlur: function(e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
    /**
    * 添加图片
    */
@@ -100,7 +105,7 @@ Page({
       }else{
         imageListArr = res
       }
-      console.log(imageListArr)
+      // console.log(imageListArr)
       if(imageListArr.length>=6){
         that.setData({
           showAddBtn: false
@@ -117,22 +122,42 @@ Page({
     })
   },
   addNew(){
+    // console.log(app.globalData.userInfo)
     var that = this;
-    var newDataObj = {
-      cid: that.data.cid,
-      author: '大作者',
-      image_input: '',
-      content: that.data.content,
+    if(that.data.title && that.data.content){
+      
+      var newDataObj = {
+        cid: that.data.cid,
+        image_input: that.data.imageList.join(","),
+        title: that.data.title,
+        content: that.data.content,
+        author: app.globalData.userInfo.nickname,
+        userId: app.globalData.userInfo.uid,
+        avatar: app.globalData.userInfo.avatar,
+        level: app.globalData.userInfo.level,
+      }
+      console.log(newDataObj)
+      addArticle(newDataObj).then(res=>{
+        console.log(res);
+        if(res.status == 200){
+          wx.navigateBack({
+            delta: 1
+          })
+        }else{
+          Util.Tips(res.msg);
+        }
+      });
+    }else{
+      Util.Tips('标题和内容必填');
     }
-    console.log(newDataObj)
-    // addArticle(newDataObj).then(res=>{
-    //   console.log(res);
-    // });
+    
   },
   delImgItem(e){
     let index = e.target.dataset.index;
+    
     let newImageArr = this.data.imageList;
-        newImageArr = newImageArr.splice(index);
+        newImageArr.splice(index, 1);
+        console.log(newImageArr)
     this.setData({
       imageList: newImageArr
     })

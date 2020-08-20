@@ -393,7 +393,7 @@ const uploadImageMore=function (opt, successCallback, errorCallback) {
       for(let i=0; i<length; i++){
         console.log(i)
         wx.showLoading({
-          title: '正在上传第'+(i+1)+'张',
+          title: '正在上传图片',
         })
         wx.uploadFile({
           url: getApp().globalData.url+'/api/'+uploadUrl,
@@ -407,12 +407,19 @@ const uploadImageMore=function (opt, successCallback, errorCallback) {
             [TOKENNAME]: 'Bearer '+getApp().globalData.token
           },
           success: function (res) {
-            let dataobj = res.data ? JSON.parse(res.data) : {};
-            imgArr.push(dataobj.data.url);
+            console.log(res)
             wx.hideLoading();
-            if(i>=length-1){
-              successCallback && successCallback(imgArr)
+            if(res.statusCode == 200){
+              let dataobj = res.data ? JSON.parse(res.data) : {};
+              if(dataobj.status == 200){
+                imgArr.push(dataobj.data.url);
+                if(i>=length-1){
+                  successCallback && successCallback(imgArr)
+                }
+              }
+              
             }
+            
             
           }, 
           fail: function (res) {

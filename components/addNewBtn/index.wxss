@@ -1,0 +1,21 @@
+.addNewBtn{
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 60rpx;
+}
+.addNewIcon{
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url('https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/ad.png') no-repeat;
+  background-size: 100% 100%;
+}
+.addNewText{
+  font-size: 27rpx;
+  color: #999;
+  text-align: center;
+  padding-top: 5rpx;
+}

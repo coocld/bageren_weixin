@@ -1,8 +1,8 @@
 <navbar parameter='{{parameter}}'></navbar>
 <view class="addNew">
-   <!-- <view class="newTitle">
-      <input class="title-input" placeholder="标题" />
-   </view> -->
+   <view class="newTitle">
+      <input class="title-input" value="{{title}}" bindinput="bindTextTitleBlur" placeholder="标题" />
+   </view>
    <view class="newContent">
       <textarea bindinput="bindTextAreaBlur" class="contentTextarea" value="{{content}}" auto-height placeholder="说点什么吧"/>
       <view class="clear"></view>
@@ -26,16 +26,17 @@
    </view> -->
    <view class="newType">
       <view class="newItem">
-         <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeList}}">
+         <picker bindchange="bindPickerChange" value="{{cid}}" range="{{typeList}}">
             <text class="icon-l"></text>
             <text class="lable-c">选择模块</text>
-            <text class="cont">{{typeList[index]}}</text>
+            
             <text class="icon-r"></text>
+            <text class="cont">{{typeList[cid]}}信息</text>
          </picker>
       </view>
    </view>
    <view class="btnbot">
-      <button class="btnSub" type="default" wx:if="{{!content}}" >发布</button>
+      <button class="btnSub" type="default" wx:if="{{!content || !title}}" >发布</button>
       <button class="btnSub btnSubWarn" type="warn" loading="" bindtap="addNew" wx:else >发布</button>
    </view>
 </view>

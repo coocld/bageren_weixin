@@ -32,7 +32,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.2",
-	"appid": "wx6db7498d371fb240",
+	"appid": "wx1c15eec4af5a4b68",
 	"projectname": "3.2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -66,15 +66,16 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "order_list",
-					"pathName": "pages/admin/order_list/index",
-					"query": "status=0"
+					"name": "pages/news_list/index",
+					"pathName": "pages/news_list/index",
+					"query": "status=0",
+					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/user_payment/index",
-					"pathName": "pages/user_payment/index",
-					"query": "status=0",
+					"id": 1,
+					"name": "pages/news_details/index",
+					"pathName": "pages/news_details/index",
+					"query": "id=12&img=http://oss.asheep.cn/f4320202008201358078554.jpg,http://oss.asheep.cn/a4d0d202008201358104580.png",
 					"scene": null
 				},
 				{

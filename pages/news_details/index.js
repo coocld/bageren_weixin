@@ -18,6 +18,8 @@ Page({
     id:0,
     articleInfo:[],
     store_info:{},
+    imgList: [],
+    view: 0
   },
 
   /**
@@ -25,7 +27,12 @@ Page({
    */
   onLoad: function (options) {
     if (options.hasOwnProperty('id')){
-      this.setData({ id: options.id});
+      this.setData({ 
+        id: options.id,
+        imgList: options.img.split(','),
+        view: options.view
+      });
+      
     }else{
       wx.navigateBack({delta: 1 });
     }
@@ -89,5 +96,23 @@ Page({
       path: '/pages/news_details/index?id=' + this.data.id,
       imageUrl: this.data.articleInfo.image_input.length ? this.data.articleInfo.image_input[0] : '',
     }
+  },
+   //预览图片
+   topic_preview: function(e){
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    var url = e.currentTarget.dataset.url;
+    var previewImgArr = [];
+    //通过循环在数据链里面找到和这个id相同的这一组数据，然后再取出这一组数据当中的图片
+    var data = that.data.topic_recomData;
+    for (var i in data) {
+      if (id == data[i].id) {
+        previewImgArr = data[i].pic;
+      }
+    }
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: that.data.imgList // 需要预览的图片http链接列表
+    })
   }
 })

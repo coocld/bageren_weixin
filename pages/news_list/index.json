@@ -1,6 +1,6 @@
 {
   "usingComponents": {
     "navbar": "/components/navbar/index",
-    "home": "/components/home/index"
+    "addNewBtn": "/components/addNewBtn/index"
   }
 }

@@ -55,6 +55,7 @@ page{background-color:#fff!important;}
   float: right;
   background: url(https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/rig.png) no-repeat;
   background-size: 100% 100%;
+
 }
 .lable-c{
    padding-left: 20rpx;
@@ -154,4 +155,10 @@ page{background-color:#fff!important;}
 .more-image:after {
   -webkit-transform: translate(-50%,-50%) rotate(90deg);
   transform: translate(-50%,-50%) rotate(90deg);
+}
+.cont{
+  float: right;
+  padding-right: 13rpx;
+  color: #000;
+  font-weight: bold;
 }

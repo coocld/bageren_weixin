@@ -4,10 +4,28 @@
    <view class='list acea-row row-middle'>
       <view class='label'>{{articleInfo.cart_name}}</view>
       <view class='item'>{{articleInfo.add_time}}</view>
+      <view class='view'>{{view}}阅读</view>
    </view>
    <view class='conter'>
      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
    </view>
+   <view class='topic_answerImg'>
+      <block wx:for='{{imgList}}'  wx:key='index' wx:for-item='answerItem'>
+        <block wx:if="{{imgList.length==1}}">
+            <image mode="heightFix" bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_one' src='{{answerItem}}'></image>
+        </block>
+        <block wx:elif="{{imgList.length==2}}">
+            <image bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_two' src='{{answerItem}}'></image>
+        </block>
+        <block  wx:elif="{{imgList.length==3}}">
+            <image bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_three' src='{{answerItem}}'></image>
+        </block>
+        <block wx:else>
+            <image bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_three' src='{{answerItem}}'></image>
+        </block>
+    </block>
+ 
+</view>
    <view class="picTxt acea-row row-between-wrapper" wx:if='{{store_info.id}}'>
       <view class="pictrue"><image src="{{store_info.image}}"></image></view>
       <view class="text">
@@ -22,4 +40,4 @@
     <button class="bnt bg-color" open-type="share"  hover-class='none'>和好友一起分享</button>
 </view>
 <import src="/wxParse/wxParse.wxml"/>
-<home></home>
+<!-- <home></home> -->
