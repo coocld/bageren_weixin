@@ -41,6 +41,7 @@ Page({
     selfLatitude: '',
     liveList: [],
     liveInfo:{},
+    logoUrl: 'https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/logo2.png'
   },
   closeTip:function(){
     wx.setStorageSync('msg_key',true);
