@@ -29,7 +29,7 @@ Page({
     if (options.hasOwnProperty('id')){
       this.setData({ 
         id: options.id,
-        imgList: options.img.split(','),
+        imgList: options.img ? options.img.split(',') : [],
         view: options.view
       });
       

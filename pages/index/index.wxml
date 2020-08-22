@@ -103,6 +103,43 @@
             </scroll-view>
         </view>
     </view>
+    <view class='wrapper' wx:if="{{articleList3.length}}">
+       <view class='title acea-row row-between-wrapper'>
+          <view class='text'>
+             <view class='name line1'>农技知识</view>
+             <view class='line1'>农产品综合管理技术分享</view>
+          </view>
+          <navigator class='more' url='/pages/new_list/index?cat=3'>更多<text class='iconfont icon-jiantou'></text></navigator>
+       </view>
+       <view class="newcont">
+          
+         <view class="newitem" wx:for="{{articleList3}}" wx:key="index">
+            <navigator url="/pages/news_details/index?id={{item.id}}&img={{item.image_input}}&view={{item.visit}}">
+            <text class="newtitle">{{item.title}}</text>
+            <text class="newdata">{{item.add_time}}</text>
+          </navigator>
+            
+         </view>
+       </view>
+    </view>
+    <view class='wrapper' wx:if="{{articleList4}}">
+       <view class='title acea-row row-between-wrapper'>
+          <view class='text'>
+             <view class='name line1'>农产品收购</view>
+             <view class='line1'>农产品收购信息公布</view>
+          </view>
+          <navigator class='more' url='/pages/new_list/index?cat=4'>更多<text class='iconfont icon-jiantou'></text></navigator>
+       </view>
+       <view class="newcont">
+         <view class="newitem" wx:for="{{articleList4}}" wx:key="index">
+            <navigator url="/pages/news_details/index?id={{item.id}}&view={{item.visit}}">
+               <text class="newtitle">{{item.title}}</text>
+               <text class="newdata">{{item.add_time}}</text>
+            </navigator>
+         </view>
+         
+       </view>
+    </view>
     <view class='wrapper' wx:if="{{fastList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>

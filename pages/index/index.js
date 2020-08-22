@@ -1,6 +1,6 @@
 const app = getApp();
 
-import { getIndexData, getCoupons, getTemlIds, getLiveList} from '../../api/api.js';
+import { getIndexData, getCoupons, getTemlIds, getLiveList, getArticleList} from '../../api/api.js';
 import { CACHE_SUBSCRIBE_MESSAGE } from '../../config.js';
 import Util from '../../utils/util.js';
 import wxh from '../../utils/wxh.js';
@@ -41,7 +41,9 @@ Page({
     selfLatitude: '',
     liveList: [],
     liveInfo:{},
-    logoUrl: 'https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/logo2.png'
+    logoUrl: 'https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/logo2.png',
+    articleList3: [],
+    articleList4: []
   },
   closeTip:function(){
     wx.setStorageSync('msg_key',true);
@@ -62,6 +64,7 @@ Page({
     if (wx.getStorageSync('msg_key')) this.setData({ iShidden:true});
     this.getTemlIds();
     this.getLiveList();
+    this.getCidArticle();
   },
   getLiveList:function(){
     getLiveList(1,20).then(res=>{
@@ -195,5 +198,19 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getCidArticle: function () {
+    var that = this;
+    
+    getArticleList(3, { page: 1, limit: 5}).then(res=>{
+      that.setData({ 
+        articleList3: res.data
+      });
+    });
+    getArticleList(4, { page: 1, limit: 5}).then(res=>{
+      that.setData({ 
+        articleList4: res.data
+      });
+    });
+  },
 })

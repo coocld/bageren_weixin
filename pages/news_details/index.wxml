@@ -4,12 +4,12 @@
    <view class='list acea-row row-middle'>
       <view class='label'>{{articleInfo.cart_name}}</view>
       <view class='item'>{{articleInfo.add_time}}</view>
-      <view class='view'>{{view}}阅读</view>
+      <view class='view'>{{view?view:0}}阅读</view>
    </view>
    <view class='conter'>
      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
    </view>
-   <view class='topic_answerImg'>
+   <view class='topic_answerImg' wx:if="{{imgList.length}}">
       <block wx:for='{{imgList}}'  wx:key='index' wx:for-item='answerItem'>
         <block wx:if="{{imgList.length==1}}">
             <image mode="heightFix" bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_one' src='{{answerItem}}'></image>

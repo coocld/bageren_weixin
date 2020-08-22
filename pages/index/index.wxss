@@ -99,6 +99,30 @@ margin-left:10rpx;}
 .index .liveBroadcast .broadcast .text{font-size:30rpx;color:#000;margin:18rpx 0 39rpx 0;}
 .index .liveBroadcast .broadcast.end .label{background:linear-gradient(270deg,rgba(153,153,153,1) 0%,rgba(102,102,102,1) 100%);}
 .index .liveBroadcast .broadcast.time .label{background:linear-gradient(315deg,rgba(24,192,244,1) 0%,rgba(26,163,246,1) 100%);}
+.newcont{
+  width: 690rpx;
+  margin: 28rpx auto 0 auto;
+}
+.newitem{
+  height: 60rpx;
+  width: 690rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+.newtitle{
+  float: left;
+  width: 520rpx;
+  height: 60rpx;
+  overflow: hidden;
+}
+.newdata{
+  width: 170rpx;
+  height: 60rpx;
+  float: right;
+  text-align: right;
+  color: #999;
+}
+  
 
 
 

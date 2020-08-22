@@ -11,7 +11,7 @@ Page({
     parameter: {
       'navbar': '1',
       'return': '1',
-      'title': '资讯',
+      'title': '农产品信息',
       'color': false
     },
     imgUrls: [],
