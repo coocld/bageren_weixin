@@ -15,7 +15,7 @@ Page({
       'title': '',
       'color': false
     },
-    typeList: ['求购', '供应'],
+    typeList: ['供应信息', '求购信息'],
     imageList: [],
     cid: 1,
     content: '',

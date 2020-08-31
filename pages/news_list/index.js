@@ -1,6 +1,5 @@
 import { getArticleCategoryList, getArticleList, getArticleHotList, getArticleBannerList} from '../../api/api.js';
 
-
 const app = getApp();
 Page({
 
@@ -22,7 +21,7 @@ Page({
     interval: 3000,
     duration: 500,
     navList:[],
-    active: 0,
+    active: 1,
     page:1,
     limit:8,
     status:false,
@@ -33,7 +32,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.cat){
+      this.setData({
+        active: options.cat
+      })
+    }
   },
   getArticleHot: function () {
     var that = this;
@@ -94,10 +97,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getArticleHot();
+    // this.getArticleHot();
+    this.setData({ status: false, page: 1, articleList:[]});
     this.getArticleBanner();
     this.getArticleCate();
-    this.setData({ status: false, page: 1, articleList:[]});
+    
     this.getCidArticle();
   },
 

@@ -114,6 +114,8 @@ margin-left:10rpx;}
   width: 520rpx;
   height: 60rpx;
   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .newdata{
   width: 170rpx;

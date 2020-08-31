@@ -1,3 +1,4 @@
+<import src="/wxParse/wxParse.wxml"/>
 <navbar parameter='{{parameter}}'></navbar>
 <view class='newsDetail'>
    <view class='title'>{{articleInfo.title}}</view>
@@ -9,7 +10,7 @@
    <view class='conter'>
      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
    </view>
-   <view class='topic_answerImg' wx:if="{{imgList.length}}">
+   <view class='topic_answerImg' wx:if="{{imgList.length && articleInfo.cid==1 || articleInfo.cid==2}}">
       <block wx:for='{{imgList}}'  wx:key='index' wx:for-item='answerItem'>
         <block wx:if="{{imgList.length==1}}">
             <image mode="heightFix" bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_one' src='{{answerItem}}'></image>
@@ -39,5 +40,5 @@
     </view>
     <button class="bnt bg-color" open-type="share"  hover-class='none'>和好友一起分享</button>
 </view>
-<import src="/wxParse/wxParse.wxml"/>
+
 <!-- <home></home> -->

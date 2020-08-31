@@ -31,7 +31,7 @@
             <text class="lable-c">选择模块</text>
             
             <text class="icon-r"></text>
-            <text class="cont">{{typeList[cid]}}信息</text>
+            <text class="cont">{{typeList[cid]}}</text>
          </picker>
       </view>
    </view>

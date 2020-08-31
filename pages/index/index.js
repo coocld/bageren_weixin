@@ -41,7 +41,7 @@ Page({
     selfLatitude: '',
     liveList: [],
     liveInfo:{},
-    logoUrl: 'https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/logo2.png',
+    logoUrl: 'http://oss.asheep.cn/590c8202008262054433617.png',
     articleList3: [],
     articleList4: []
   },
@@ -55,6 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
     wxh.selfLocation(1);
     this.setData({
       navH: app.globalData.navHeight
@@ -64,7 +65,7 @@ Page({
     if (wx.getStorageSync('msg_key')) this.setData({ iShidden:true});
     this.getTemlIds();
     this.getLiveList();
-    this.getCidArticle();
+    setTimeout(function(){that.getCidArticle()}, 3000)
   },
   getLiveList:function(){
     getLiveList(1,20).then(res=>{

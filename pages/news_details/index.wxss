@@ -1,3 +1,4 @@
+@import "/wxParse/wxParse.wxss"; 
 page{background-color:#fff!important;}
 .newsDetail{
   padding-bottom: 130rpx;
@@ -55,4 +56,3 @@ page{background-color:#fff!important;}
 .topic_answer_itemImg:nth-of-type(3n){
   margin-right: 0;
 }
-@import "/wxParse/wxParse.wxss"; 

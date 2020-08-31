@@ -55,6 +55,6 @@
 <view class='noCommodity' wx:if="{{articleList.length == 0 && (page != 1 || active== 0)}}">
    <view class='pictrue'><image src='/images/noNews.png'></image></view>
 </view>
-<addNewBtn></addNewBtn>
+<addNewBtn wx:if="{{active!=3 && active!=4}}"></addNewBtn>
 
 <!-- <home></home> -->
