@@ -1,6 +1,7 @@
 module.exports = {
   // 请求域名 格式： https://您的域名
-  HTTP_REQUEST_URL:'https://www.8geren.cn',
+  HTTP_REQUEST_URL:'https://www.8geren.cn',//正式环境
+  // HTTP_REQUEST_URL:'http://127.0.0.1', //本地环境
   // Socket链接 暂不做配置
   WSS_SERVER_URL:'ws://www.8geren.cn:20002',
 

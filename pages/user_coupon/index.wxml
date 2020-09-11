@@ -21,6 +21,6 @@
   </view>
 </view>
 <view class='noCommodity' wx:if="{{!couponsList.length && loading==true}}">
-   <view class='pictrue'><image src='/images/noCoupon.png'></image></view>
+   <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noCoupon.png'></image></view>
 </view>
 <authorize bind:onLoadFun="onLoadFun"></authorize>

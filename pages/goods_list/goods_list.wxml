@@ -13,15 +13,15 @@
      <view class='item {{title ? "font-color":""}}' bindtap='set_where' data-type='1'>{{title ? title:'默认'}}</view>
      <view class='item' bindtap='set_where' data-type='2'>
       价格
-      <image wx:if="{{price==1}}" src='/images/up.png'></image>
-      <image wx:elif="{{price==2}}" src='/images/down.png'></image>
-      <image wx:else src='/images/horn.png'></image>
+      <image wx:if="{{price==1}}" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/up.png'></image>
+      <image wx:elif="{{price==2}}" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/down.png'></image>
+      <image wx:else src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/horn.png'></image>
      </view>
      <view class='item' bindtap='set_where' data-type='3'>
         销量
-        <image wx:if="{{stock==1}}" src='/images/up.png'></image>
-        <image wx:elif="{{stock==2}}" src='/images/down.png'></image>
-        <image wx:else src='/images/horn.png'></image>
+        <image wx:if="{{stock==1}}" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/up.png'></image>
+        <image wx:elif="{{stock==2}}" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/down.png'></image>
+        <image wx:else src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/horn.png'></image>
       </view>
      <!-- down -->
      <view class='item {{nows ? "font-color":""}}' bindtap='set_where' data-type='4'>新品</view>
@@ -39,7 +39,7 @@
                <view class='name line1'>{{item.store_name}}</view>
                <view class='money font-color {{is_switch==true?"":"on"}}'>￥<text class='num'>{{item.price}}</text></view>
                <view class='vip acea-row row-between-wrapper {{is_switch==true?"":"on"}}'>
-                  <view class='vip-money' wx:if="{{item.vip_price && item.vip_price > 0}}">￥{{item.vip_price}}<image src='/images/vip.png'></image></view>
+                  <view class='vip-money' wx:if="{{item.vip_price && item.vip_price > 0}}">￥{{item.vip_price}}<image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/vip.png'></image></view>
                   <view>已售{{item.sales}}件</view>
                </view>
             </view>
@@ -54,6 +54,6 @@
    </view>
 </view>
 <view class='noCommodity' wx:if="{{productList.length==0 && where.page > 1}}">
-   <view class='pictrue'><image src='/images/noShopper.png'></image></view>
+   <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noShopper.png'></image></view>
    <recommend host_product="{{host_product}}"></recommend>
 </view>

@@ -60,9 +60,9 @@
    </view>
    <view class='bargainGang'>
       <view class='title font-color acea-row row-center-wrapper'>
-         <view class='pictrue'><image src='/images/left.png'></image></view>
+         <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
          <view class='titleCon'>砍价帮</view>
-         <view class='pictrue on'><image src='/images/left.png'></image></view>
+         <view class='pictrue on'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
       </view>
       <view class='list'>
         <block wx:for="{{bargainUserHelpList}}" wx:key='index'> 
@@ -83,9 +83,9 @@
    </view>
    <view class='goodsDetails'>
       <view class='title font-color acea-row row-center-wrapper'>
-         <view class='pictrue'><image src='/images/left.png'></image></view>
+         <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
          <view class='titleCon'>商品详情</view>
-         <view class='pictrue on'><image src='/images/left.png'></image></view>
+         <view class='pictrue on'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
       </view>
       <view class='conter'>
           <template is="wxParse" data="{{wxParseData:description.nodes}}"/>
@@ -94,16 +94,16 @@
    </view>
    <view class='goodsDetails'>
       <view class='title font-color acea-row row-center-wrapper'>
-         <view class='pictrue'><image src='/images/left.png'></image></view>
+         <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
          <view class='titleCon'>砍价规则</view>
-         <view class='pictrue on'><image src='/images/left.png'></image></view>
+         <view class='pictrue on'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/left.png'></image></view>
       </view>
       <view class='conter'>
           <template is="wxParse" data="{{wxParseData:rule.nodes}}"/>
       </view>
    </view>
    <view class='bargainTip {{active==true?"on":""}}'>
-       <view class='pictrue'><image src='/images/bargainBg.jpg'></image></view>
+       <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/bargainBg.jpg'></image></view>
        <view wx:if="{{bargainUid == userInfo.uid }}">
         <view class='cutOff'>您已砍掉<text class='font-color'>{{bargainUserBargainPrice.price}}</text>元，听说分享次数越多砍价成功的机会越大哦！</view>
         <button open-type='share' class='tipBnt'>邀请好友帮砍价</button>

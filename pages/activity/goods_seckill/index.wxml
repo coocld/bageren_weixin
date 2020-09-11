@@ -6,7 +6,7 @@
   </view>
   <view class="seckillList acea-row row-between-wrapper">
     <view class="priceTag">
-      <image src="/images/priceTag.png"></image>
+      <image src="https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/priceTag.png"></image>
     </view>
     <view class='timeLsit'>
       <scroll-view class="scroll-view_x" scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" style="width:auto;overflow:hidden;height:106rpx;">
@@ -66,7 +66,7 @@
   </view>
 </view>
 <view class='noCommodity' wx:if="{{seckillList.length == 0 && (page != 1 || active== 0)}}">
-   <view class='pictrue'><image src='/images/noShopper.png'></image></view>
+   <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noShopper.png'></image></view>
 </view>
 <home></home>
 <!-- <view class='list'>

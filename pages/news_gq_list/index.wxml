@@ -29,13 +29,13 @@
             <view class='name line2'>{{item.title}}</view>
             <view>{{item.add_time}}</view>
          </view>
-         <view class='pictrue'><image src='{{item.image_input[0]}}'></image></view>
+         <view class='pictrue'><image mode="aspectFill" src='{{item.image_input[0]}}'></image></view>
       </navigator>
       <navigator url='/pages/news_details/index?id={{item.id}}' hover-class='none'  class='item' wx:elif="{{item.image_input.length == 2}}">
          <view class='title line1'>{{item.title}}</view>
          <view class='picList acea-row row-between-wrapper'>
            <block wx:for="{{item.image_input}}" wx:key='index' wx:for-item="itemImg">
-            <view class='pictrue'><image src='{{itemImg}}'></image></view>
+            <view class='pictrue'><image mode="aspectFill" src='{{itemImg}}'></image></view>
            </block> 
          </view>
          <view class='time'>{{item.add_time}}</view>
@@ -44,7 +44,7 @@
          <view class='title line1'>{{item.title}}</view>
          <view class='picList on acea-row row-between-wrapper'>
            <block wx:for="{{item.image_input}}" wx:key='index' wx:for-item="itemImg">
-            <view class='pictrue'><image src='{{itemImg}}'></image></view>
+            <view class='pictrue'><image mode="aspectFill" src='{{itemImg}}'></image></view>
            </block> 
          </view>
          <view class='time'>{{item.add_time}}</view>
@@ -53,6 +53,8 @@
    </view>
 </view>
 <view class='noCommodity' wx:if="{{articleList.length == 0 && (page != 1 || active== 0)}}">
-   <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noNews.png'></image></view>
+   <view class='pictrue'><image mode="aspectFill" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noNews.png'></image></view>
 </view>
+<addNewBtn></addNewBtn>
 
+<!-- <home></home> -->

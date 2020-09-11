@@ -45,7 +45,7 @@
    </view>
    <recommend host_product="{{host_product}}"></recommend>
    <view class='growthValue {{growthValue==false?"on":""}}'>
-      <view class='pictrue'><image src='/images/value.jpg'></image><text class='iconfont icon-guanbi3' bindtap='growthValue'></text></view>
+      <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/value.jpg'></image><text class='iconfont icon-guanbi3' bindtap='growthValue'></text></view>
       <view class='conter'>{{illustrate}}</view>
    </view>
    <view class='mask' hidden='{{growthValue}}' bindtap='growthValue'></view>

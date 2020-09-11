@@ -22,7 +22,7 @@
       </view>
    </view>
    <!-- 无优惠券 -->
-   <view class='pictrue' wx:else><image src='/images/noCoupon.png'></image></view>
+   <view class='pictrue' wx:else><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noCoupon.png'></image></view>
 </view>
 <view class='mask' catchtouchmove="true" hidden='{{coupon.coupon==false}}' bindtap='close'></view>
 

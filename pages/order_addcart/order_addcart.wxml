@@ -66,7 +66,7 @@
     </view>
   </view>
   <view class='noCart' wx:if="{{cartList.valid.length == 0 && cartList.invalid.length == 0}}">
-     <view class='pictrue'><image src='/images/noCart.png'></image></view>
+     <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noCart.png'></image></view>
      <recommend host_product='{{host_product}}'></recommend>
   </view>
   <view style='height:120rpx;'></view>

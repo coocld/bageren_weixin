@@ -67,7 +67,7 @@
         <view class='name' bindtap="makePhone">{{orderInfo.system_store.name}}<text class='phone'>{{orderInfo.system_store.phone}}</text><text class="iconfont icon-tonghua font-color"></text></view>
         <view>{{orderInfo.system_store._detailed_address}}</view>
     </view>
-    <view class='line' wx:if="{{orderInfo.shipping_type === 1}}"><image src='/images/line.jpg'></image></view>
+    <view class='line' wx:if="{{orderInfo.shipping_type === 1}}"><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/line.jpg'></image></view>
    </view>
    <orderGoods evaluate='{{evaluate}}' orderId="{{order_id}}" cartInfo="{{cartInfo}}"></orderGoods>
    <button open-type="contact" hover-class='none' class="contactCustomer font-color"><text class='iconfont icon-kefu'></text>联系客服</button>

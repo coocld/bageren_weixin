@@ -14,7 +14,7 @@
           <view class="picTxt acea-row row-between-wrapper">
             <view class="pictrue" catchtap='uploadpic' wx:if='{{item.uid === userInfo.uid }}'>
               <image src='{{item.avatar}}'></image>
-              <image src='/images/alter.png' class="alter"></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/alter.png' class="alter"></image>
             </view>
             <view class="pictrue" wx:else>
               <image src='{{item.avatar}}'></image>

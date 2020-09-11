@@ -34,6 +34,9 @@
       <view class='iconfont icon-fenxiang' bindtap='listenerActionSheet'></view>
     </view>
     <view class='introduce'>{{storeInfo.store_name}}</view>
+    <view class='label acea-row row-between-wrapper' wx:if="{{storeInfo.purchase_limit>0}}">
+      <text style="color:red">每个ID限购{{storeInfo.purchase_limit}}件</text>
+    </view>
     <view class='label acea-row row-between-wrapper'>
       <view>原价:￥{{storeInfo.ot_price}}</view>
       <view>库存:{{storeInfo.stock}}{{storeInfo.unit_name}}</view>
@@ -117,9 +120,9 @@
   </view>
    <view class="superior" wx:if="{{good_list.length}}" id="past2">
       <view class="title acea-row row-center-wrapper">
-        <image src="/images/ling.png"></image>
+        <image src="https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/ling.png"></image>
         <view class="titleTxt">优品推荐</view>
-        <image src="/images/ling.png"></image>
+        <image src="https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/ling.png"></image>
       </view>
       <view class="slider-banner banner">
         <swiper indicator-dots="true"
@@ -167,8 +170,11 @@
       <view>购物车</view>
     </navigator>
     <view class='bnt acea-row'>
-      <form bindsubmit="joinCart">
+      <form bindsubmit="joinCart" wx:if="{{storeInfo.purchase_limit==0}}">
         <button class='joinCart bnts' formType="submit">加入购物车</button>
+      </form>
+      <form wx:else>
+        <button class='joinCart bnts bg-color-hui'>加入购物车</button>
       </form>
       <form bindsubmit="goBuy" wx:if="{{productSelect.stock>0}}">
         <button class='buy bnts' formType="submit">立即购买</button>
@@ -195,7 +201,7 @@
 </action-sheet>
 <!-- 海报展示 -->
 <view class='poster-pop' wx:if="{{posterImageStatus}}">
-  <image src='/images/poster-close.png' class='close' bindtap='posterImageClose'></image>
+  <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/poster-close.png' class='close' bindtap='posterImageClose'></image>
   <image src='{{posterImage}}'></image>
   <view class='save-poster' bindtap='savePosterPath'>保存到手机</view>
 </view>

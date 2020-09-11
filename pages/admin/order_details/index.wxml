@@ -22,7 +22,7 @@
       </view>
       <view>{{ orderInfo.user_address }}</view>
     </view>
-    <view class='line'><image src='/images/line.jpg'></image></view>
+    <view class='line'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/line.jpg'></image></view>
     <view class="pos-order-goods">
       <view class="goods acea-row row-between-wrapper" wx:for="{{orderInfo._info}}"  wx:key='index'>
         <view class="picTxt acea-row row-between-wrapper">

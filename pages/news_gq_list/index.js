@@ -10,7 +10,7 @@ Page({
     parameter: {
       'navbar': '1',
       'return': '1',
-      'title': '农产品信息',
+      'title': '供求信息',
       'color': false
     },
     imgUrls: [],
@@ -21,9 +21,8 @@ Page({
     interval: 3000,
     duration: 500,
     navList:[
-      {id: 5, title: "新闻资讯"},
-      {id: 3, title: "农技知识"},
-      {id: 4, title: "农产品收购"},
+      {id: 1, title: "求购信息"},
+      {id: 2, title: "供应信息"}
     ],
     active: 1,
     page:1,

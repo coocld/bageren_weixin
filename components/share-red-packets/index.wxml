@@ -2,7 +2,7 @@
    <view class='iconfont icon-guanbi' bindtap='closeShare'></view>
    <view class='line'></view>
    <view class='sharing-con' bindtap='goShare'>
-      <image src='/images/red-packets.png'></image>
+      <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/red-packets.png'></image>
       <view class='text font-color'>
         <view>会员分享返</view>
         <view class='money'><text class='label'>￥</text>{{sharePacket.priceName}}</view>

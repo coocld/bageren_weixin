@@ -51,7 +51,7 @@ Page({
       let index = e.currentTarget.dataset.index;
       let item = this.data.cartList.valid[index];
       item.cart_num = 1;
-      if (item.cart_num) this.setCartNum(item.id, item.cart_num);
+      if (item.cart_num) this.setCartNum(item.id, item.cart_num, item.product_id,);
       let itemData = "cartList.valid[" + index + "]";
       this.setData({ [itemData]: item });
       this.switchSelect();
@@ -174,7 +174,7 @@ Page({
       item.numSub = true; 
     } else { item.numSub = false;item.numAdd = false; }
     if (false == status) {
-      that.setCartNum(item.id, item.cart_num, function (data) {
+      that.setCartNum(item.id, item.cart_num, item.product_id, function (data) {
         var itemData = "cartList.valid[" + index + "]";
         that.setData({ [itemData]: item });
         that.switchSelect();
@@ -189,7 +189,7 @@ Page({
     let index = e.currentTarget.dataset.index;
     let item = this.data.cartList.valid[index];
     item.cart_num = e.detail.value;
-    if (item.cart_num) this.setCartNum(item.id, item.cart_num);
+    if (item.cart_num) this.setCartNum(item.id, item.cart_num, item.product_id);
     let itemData = "cartList.valid[" + index + "]";
     this.setData({ [itemData]: item });
     this.switchSelect();
@@ -208,16 +208,20 @@ Page({
       item.cart_num = item.productInfo.stock;
       item.numAdd = true;
       item.numSub = false; 
-    } else { item.numAdd = false; item.numSub = false; }
-    that.setCartNum(item.id, item.cart_num, function (data) {
+    } else { 
+      item.numAdd = false; 
+      item.numSub = false; 
+    }
+    that.setCartNum(item.id, item.cart_num, item.product_id, function (data) {
       var itemData = "cartList.valid[" + index + "]";
       that.setData({ [itemData]: item });
       that.switchSelect();
     });
   },
-  setCartNum(cartId, cartNum, successCallback) {
+  setCartNum(cartId, cartNum, productId, successCallback) {
     var that = this;
-    changeCartNum(cartId, cartNum).then(res=>{
+    changeCartNum(cartId, cartNum, productId).then(res=>{
+      console.log(res)
       successCallback && successCallback(res.data);
     });
   },

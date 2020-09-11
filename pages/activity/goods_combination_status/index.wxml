@@ -35,7 +35,7 @@
       <view class='list acea-row row-middle {{iShidden?"on":""}} {{isOk ? "result": ""}}' >
          <view class='pictrue'><image src='{{pinkT.avatar}}'></image></view>
          <view class='pictrue' wx:for="{{pinkAll}}" wx:key='index'><image src='{{item.avatar}}'></image></view>
-         <view class='pictrue' wx:for="{{count}}" wx:key='index'><image src='/images/vacancy.png'></image></view>
+         <view class='pictrue' wx:for="{{count}}" wx:key='index'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/vacancy.png'></image></view>
       </view>
     
       <!-- 分享团后进入页面-我要参团 -->

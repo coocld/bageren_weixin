@@ -27,8 +27,8 @@ export function getCartCounts(numType) {
  * @param int cartId  购物车id
  * @param int number 修改数量
  */
-export function changeCartNum(cartId, number) {
-  return request.post("cart/num", { id: cartId, number: number });
+export function changeCartNum(cartId, number, productId) {
+  return request.post("cart/num", { id: cartId, number: number, productId:productId });
 }
 
 /**

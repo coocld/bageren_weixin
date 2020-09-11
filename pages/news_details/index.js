@@ -1,4 +1,3 @@
-import wxParse from '../../wxParse/wxParse.js';
 import { getArticleDetails } from '../../api/api.js';
 
 const app = getApp();
@@ -19,7 +18,8 @@ Page({
     articleInfo:[],
     store_info:{},
     imgList: [],
-    view: 0
+    view: 0,
+    content: ''
   },
 
   /**
@@ -28,9 +28,7 @@ Page({
   onLoad: function (options) {
     if (options.hasOwnProperty('id')){
       this.setData({ 
-        id: options.id,
-        imgList: options.img ? options.img.split(',') : [],
-        view: options.view
+        id: options.id
       });
       
     }else{
@@ -54,9 +52,13 @@ Page({
   getArticleOne:function(){
     var that = this;
     getArticleDetails(that.data.id).then(res=>{
-      that.setData({ 'parameter.title': res.data.title, articleInfo: res.data, store_info: res.data.store_info ? res.data.store_info : {} });
-      //html转wxml
-      wxParse.wxParse('content', 'html', res.data.content, that, 0);
+      that.setData({ 
+        'parameter.title': res.data.title, articleInfo: res.data, store_info: res.data.store_info ? res.data.store_info : {},
+        content: res.data.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '),
+        view: res.data.visit,
+        imgList: res.data.image_input
+      });
+      
     });
   },
   /**

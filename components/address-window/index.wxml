@@ -11,7 +11,7 @@
       </view>
    </view>
    <!-- 无地址 -->
-   <view class='pictrue' wx:if="{{!is_loading && !addressList.length}}"><image src='/images/noAddress.png'></image></view>
+   <view class='pictrue' wx:if="{{!is_loading && !addressList.length}}"><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noAddress.png'></image></view>
    <view class='addressBnt bg-color' bindtap='goAddressPages'>选择其地址</view>
 </view>
 <view class='mask' catchtouchmove="true"  hidden='{{address.address==false}}' bindtap='close'></view>

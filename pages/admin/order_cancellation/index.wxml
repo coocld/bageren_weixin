@@ -8,7 +8,7 @@
       <view class="bnt" bindtap="codeChange">立即核销</view>
     </view>
     <view class="scan" bindtap="scanCode">
-      <image src="/images/scan.gif"></image>
+      <image src="https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/scan.gif"></image>
     </view>
 </view>
 <view wx:if="{{iShidden}}">

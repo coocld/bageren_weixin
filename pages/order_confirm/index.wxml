@@ -29,7 +29,7 @@
       <view class='iconfont icon-jiantou'></view>
     </view>
     <view class='line'>
-      <image src='/images/line.jpg'></image>
+      <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/line.jpg'></image>
     </view>
   </view>
   <orderGoods cartInfo="{{cartInfo}}"></orderGoods>

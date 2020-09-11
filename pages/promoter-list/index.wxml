@@ -20,31 +20,31 @@
     <view class='list'>
         <view class="sortNav acea-row row-middle">
             <view class="sortItem" data-sort="childCount ASC" bindtap='setSort' wx:if="{{sort == 'childCount DESC'}}">团队排序
-              <image src='/images/sort1.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort1.png'></image>
             </view>
             <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'childCount ASC'}}">团队排序
-              <image src='/images/sort3.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort3.png'></image>
             </view>
             <view class="sortItem" data-sort="childCount DESC" bindtap='setSort' wx:else>团队排序
-              <image src='/images/sort2.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort2.png'></image>
             </view>
             <view class="sortItem" data-sort="numberCount ASC" bindtap='setSort' wx:if="{{sort == 'numberCount DESC'}}">金额排序
-              <image src='/images/sort1.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort1.png'></image>
             </view>
             <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'numberCount ASC'}}">金额排序
-              <image src='/images/sort3.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort3.png'></image>
             </view>
             <view class="sortItem" data-sort="numberCount DESC" bindtap='setSort' wx:else>金额排序
-              <image src='/images/sort2.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort2.png'></image>
             </view>
             <view class="sortItem" data-sort="orderCount ASC" bindtap='setSort' wx:if="{{sort == 'orderCount DESC'}}">订单排序
-              <image src='/images/sort1.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort1.png'></image>
             </view>
             <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'orderCount ASC'}}">订单排序
-              <image src='/images/sort3.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort3.png'></image>
             </view>
             <view class="sortItem" data-sort="orderCount DESC" bindtap='setSort' wx:else>订单排序
-              <image src='/images/sort2.png'></image>
+              <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/sort2.png'></image>
             </view>
         </view>
         <block wx:for="{{recordList}}" wx:key='index'>

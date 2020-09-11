@@ -1,4 +1,3 @@
-<import src="/wxParse/wxParse.wxml"/>
 <navbar parameter='{{parameter}}'></navbar>
 <view class='newsDetail'>
    <view class='title'>{{articleInfo.title}}</view>
@@ -8,12 +7,12 @@
       <view class='view'>{{view?view:0}}阅读</view>
    </view>
    <view class='conter'>
-     <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    <rich-text nodes="{{content}}"></rich-text>
    </view>
    <view class='topic_answerImg' wx:if="{{imgList.length && articleInfo.cid==1 || articleInfo.cid==2}}">
       <block wx:for='{{imgList}}'  wx:key='index' wx:for-item='answerItem'>
         <block wx:if="{{imgList.length==1}}">
-            <image mode="heightFix" bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_one' src='{{answerItem}}'></image>
+            <image mode="widthFix" bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_one' src='{{answerItem}}'></image>
         </block>
         <block wx:elif="{{imgList.length==2}}">
             <image bindtap='topic_preview' data-id='1' data-url='{{answerItem}}' class='topic_answer_itemImg topic_answer_itemImg_two' src='{{answerItem}}'></image>
@@ -28,7 +27,7 @@
  
 </view>
    <view class="picTxt acea-row row-between-wrapper" wx:if='{{store_info.id}}'>
-      <view class="pictrue"><image src="{{store_info.image}}"></image></view>
+      <view class="pictrue"><image mode="aspectFill" src="{{store_info.image}}"></image></view>
       <view class="text">
         <view class="name line1">{{store_info.store_name}}</view>
         <view class="money font-color">

@@ -7,7 +7,7 @@
         <view>消费订单：{{orderData.order_count || 0}} 总消费：￥{{orderData.sum_price || 0}}</view>
       </view>
       <view class='pictrue'>
-        <image src='/images/orderTime.png'></image>
+        <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/orderTime.png'></image>
       </view>
     </view>
   </view>
@@ -84,7 +84,7 @@
 </view>
 <view class='noCart' wx:if="{{orderList.length == 0 && page > 1}}">
   <view class='pictrue'>
-    <image src='/images/noOrder.png'></image>
+    <image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noOrder.png'></image>
   </view>
 </view>
 <authorize bind:onLoadFun='onLoadFun'></authorize>

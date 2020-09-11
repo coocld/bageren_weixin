@@ -19,6 +19,6 @@
     </view>
 </view>
 <view class='noCommodity' wx:if="{{!replyData.sum_count && page > 1}}">
-   <view class='pictrue'><image src='/images/noEvaluate.png'></image></view>
+   <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noEvaluate.png'></image></view>
 </view>
 <authorize bind:onLoadFun="onLoadFun"></authorize>

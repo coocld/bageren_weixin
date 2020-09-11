@@ -9,6 +9,40 @@ Page({
    * 页面的初始数据
    */
   data: {
+    orderList: [
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmhead/gELOOosNsHXVRysCzpY4ezhstic4nvFyYR5VmXgibBXOU/132',
+        nickname: '杜力玮'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/NYfjRelia7DOWgU7lhNAjqyrsibkvrDegCw4iaVpJaWXiaFYtckiaWU140AUrXMGZUpGHrYkoqfdiaE42cLHzSbWdI4g/132',
+        nickname: '小倩'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKpH0SbfEicR8diaQjW11Sahicysj62kYrs529tIBuZ9Pjib2qhpAzJZqnpLxaO2ncYVCq4ZWicC5reaBw/132',
+        nickname: '闫东'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqOatxYpMBYMd27oJCQVKuuQkfltV6Y67q2RyrBMNzhicGKoJjUR8rTScZX0dYKPsOxDCCaztyVNPA/132',
+        nickname: '徐坤'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epibHqWEX3sxJCMXibiarRqXRtnX1s3micdEO8gHqPhEd4j6liaz4GS1PQnRMicptkD3ZePcVIHW7eG03EA/132',
+        nickname: '涂洋'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmhead/l9Z9MJZIaMm2gRME6Ye7nRltRxTGDMRbG9cmDLYmAKc/132',
+        nickname: '蔡宥木'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEIxOBzeNetkzuW1BqS87ZCmUQqZoAqR2icSZJFn7Sa8BLS2q8cP21ZlzMF5of9ZTg3XOXCRWsGJRJQ/132',
+        nickname: '辛福'
+      },
+      {
+        avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKCRgkdTtUQckpp1Nia3g2ksMd2icXeS61qgPSiaGU5tbdGBMAZufvzgdeTspibbtZhicGRw3sGUZSq02A/132',
+        nickname: '杨娟'
+      }
+    ],
     imgUrls: [],
     itemNew:[],
     activityList:[],
@@ -42,8 +76,9 @@ Page({
     liveList: [],
     liveInfo:{},
     logoUrl: 'http://oss.asheep.cn/590c8202008262054433617.png',
-    articleList3: [],
-    articleList4: []
+    articleList3: [], //农技知识
+    articleList4: [],  //农产品收购
+    articleList5: [] //新闻资讯
   },
   closeTip:function(){
     wx.setStorageSync('msg_key',true);
@@ -211,6 +246,11 @@ Page({
     getArticleList(4, { page: 1, limit: 5}).then(res=>{
       that.setData({ 
         articleList4: res.data
+      });
+    });
+    getArticleList(5, { page: 1, limit: 5}).then(res=>{
+      that.setData({ 
+        articleList5: res.data
       });
     });
   },
