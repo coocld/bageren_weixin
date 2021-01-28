@@ -45,6 +45,9 @@ export function setCouponReceive(couponId){
 export function getCoupons(data){
   return request.get('coupons',data,{noAuth:true})
 }
+export function getCouponsAll(data){
+  return request.get('couponsAll',data,{noAuth:true})
+}
 
 /**
  * 我的优惠券

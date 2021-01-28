@@ -683,6 +683,7 @@ Page({
     wx.downloadFile({
       url: that.setDomain(that.data.storeInfo.image),
       success: function (res) {
+        
         that.setData({
           storeImage: res.tempFilePath
         })
@@ -716,6 +717,7 @@ Page({
           that.setData({ isDown: false });
           that.setData({ PromotionCode: '' });
         },
+       
       });
     }).catch(err => {
       that.setData({ isDown: false });
@@ -752,7 +754,8 @@ Page({
           });
         } else {
           //生成推广海报
-          util.PosterCanvas(arr2, that.data.storeInfo.store_name, that.data.storeInfo.price, function (tempFilePath) {
+          util.PosterCanvas(arr2, that.data.storeInfo.store_name, that.data.storeInfo.price, 
+            function (tempFilePath) {
             that.setData({
               posterImage: tempFilePath,
               posterImageStatus: true,

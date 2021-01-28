@@ -7,7 +7,8 @@
       <view class='view'>{{view?view:0}}阅读</view>
    </view>
    <view class='conter'>
-    <rich-text nodes="{{content}}"></rich-text>
+    <!-- <rich-text nodes="{{content}}"></rich-text> -->
+    <template is="wxParse" data="{{wxParseData:description.nodes}}" />
    </view>
    <view class='topic_answerImg' wx:if="{{imgList.length && articleInfo.cid==1 || articleInfo.cid==2}}">
       <block wx:for='{{imgList}}'  wx:key='index' wx:for-item='answerItem'>
@@ -39,5 +40,5 @@
     </view>
     <button class="bnt bg-color" open-type="share"  hover-class='none'>和好友一起分享</button>
 </view>
-
+<import src="/wxParse/wxParse.wxml" />
 <!-- <home></home> -->

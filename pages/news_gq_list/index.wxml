@@ -26,7 +26,7 @@
     <block wx:for="{{articleList}}" wx:key='index'>
       <navigator url='/pages/news_details/index?id={{item.id}}' hover-class='none' class='item acea-row row-between-wrapper' wx:if="{{item.image_input.length == 1}}">
          <view class='text acea-row row-column-between'>
-            <view class='name line2'>{{item.title}}</view>
+            <view class='name line2'><text class='red' wx:if="{{item.status == 0}}">[审核中]</text>{{item.title}}</view>
             <view>{{item.add_time}}</view>
          </view>
          <view class='pictrue'><image mode="aspectFill" src='{{item.image_input[0]}}'></image></view>
@@ -56,5 +56,6 @@
    <view class='pictrue'><image mode="aspectFill" src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/noNews.png'></image></view>
 </view>
 <addNewBtn></addNewBtn>
+<authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
 
 <!-- <home></home> -->

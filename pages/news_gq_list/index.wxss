@@ -19,4 +19,7 @@ page{background-color:#fff!important;}
 .newsList .list .item .picList.on .pictrue{width:217rpx;height:136rpx;}
 .newsList .list .item .picList .pictrue image{width:100%;height:100%;border-radius:6rpx;}
 .newsList .list .item .time{text-align:right;font-size:24rpx;color:#999;margin-top:22rpx;}
+.red{
+  color: #f00;
+}
 

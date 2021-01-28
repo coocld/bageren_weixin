@@ -110,7 +110,7 @@
         <view wx:if="{{orderInfo.delivery_type === 'send'}}">送货人电话：</view>
         <view class="conter">
           {{ orderInfo.delivery_id}}
-          <span class="copy copy-data"  bindtap='copyOrderId'>复制</span>
+          <span class="copy copy-data"  bindtap='copyExpressId'>复制</span>
         </view>
       </view>
     </view>

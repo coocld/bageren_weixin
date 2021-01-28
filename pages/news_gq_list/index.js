@@ -28,7 +28,9 @@ Page({
     page:1,
     limit:8,
     status:false,
-    scrollLeft: 0
+    scrollLeft: 0,
+    iShidden: true,
+    isGoIndex:false,
   },
 
   /**
@@ -40,6 +42,8 @@ Page({
         active: options.cat
       })
     }
+    this.setData({ status: false, page: 1, articleList:[]});
+    this.getArticleBanner();
   },
   getArticleHot: function () {
     var that = this;
@@ -59,11 +63,20 @@ Page({
     var limit = that.data.limit;
     var page = that.data.page;
     var articleList = that.data.articleList;
+    
     if (that.data.status) return ;
-    getArticleList(that.data.active, { page: page, limit: limit}).then(res=>{
+    getArticleList(that.data.active, { page: page, limit: limit, userId: app.globalData.userInfo.uid}).then(res=>{
       var articleListNew = [];
-      var len = res.data.length;
-      articleListNew = articleList.concat(res.data);
+      var newList = res.data;
+      var len = newList.length;
+      articleListNew = articleList.concat(newList);
+      for(let i=0; i<articleListNew.length; i++){
+        if(articleListNew[i].status == 0){
+          if(articleListNew[i].user_id != app.globalData.userInfo.uid){
+            articleListNew.splice(i, 1);
+          }
+        }
+      }
       that.data.page++
       that.setData({ 
         articleList: articleListNew, 
@@ -95,17 +108,24 @@ Page({
   onReady: function () {
 
   },
-
+  onLoadFun: function () {
+    this.getCidArticle();
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.getArticleHot();
-    this.setData({ status: false, page: 1, articleList:[]});
-    this.getArticleBanner();
-    // this.getArticleCate();
+    if(app.globalData.isLog){
+     // this.getArticleHot();
+      this.setData({ status: false, page: 1, articleList:[]});
+      // this.getArticleBanner();
+      // this.getArticleCate();
+      
+      this.getCidArticle();
+    }else{
+      this.setData({ iShidden:false});
+    }
     
-    this.getCidArticle();
   },
 
   /**

@@ -20,10 +20,12 @@
     </view>
     <view class="order-scroll">
       <swiper indicator-dots="{{false}}" autoplay="{{true}}" vertical="{{true}}">
-          <swiper-item wx:for="{{orderList}}" wx:key="index">
+          <swiper-item wx:for="{{indexOrderList}}" wx:key="index">
              <view class="swiper-item" >
                 <image class="avatar" src="{{item.avatar}}"></image>
-                <text class="text">「供销农采」 {{item.nickname}} 刚刚购买了一单</text>
+                <text class="text">「供销农采」</text> 
+                <text class="text nickname">{{item.nickname}} </text> 
+                <text class="text">刚刚购买了一单</text>
              </view>
          </swiper-item>
           
@@ -42,7 +44,7 @@
       </block> 
     </view>
     <view class='news acea-row row-between-wrapper' wx:if="{{itemNew.length}}">
-       <view class='pictrue'><image src='https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200807/images/news.png'></image></view>
+      <view class='iconfont icon-laba'></view>
        <view class='swiperTxt'>
             <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="2500" duration="{{duration}}" vertical="true" circular="true">
                 <block wx:for="{{itemNew}}" wx:key='index'>
@@ -279,6 +281,6 @@
 </view>
 <coupon-window window='{{window}}' couponList="{{couponList}}" bind:onColse="onColse"></coupon-window>
 <home></home>
-<navigator url="/pages/goods_list/goods_list?sid=58&title=促销热品" class="hongbao">
+<navigator url="/pages/user_get_coupon/index" class="hongbao">
    <image class="img" src="https://xm-cdn.oss-cn-hangzhou.aliyuncs.com/img/20200901/hongbao.gif"></image>
 </navigator>

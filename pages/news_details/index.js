@@ -1,5 +1,5 @@
 import { getArticleDetails } from '../../api/api.js';
-
+import WxParse from '../../wxParse/wxParse.js';
 const app = getApp();
 
 Page({
@@ -59,6 +59,7 @@ Page({
         imgList: res.data.image_input
       });
       
+      WxParse.wxParse('description', 'html', res.data.content, that, 0);
     });
   },
   /**

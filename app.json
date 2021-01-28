@@ -100,14 +100,14 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "供销农采",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
     "color": "#282828",
-    "selectedColor": "#e93323",
+    "selectedColor": "#41a76f",
     "borderStyle": "white",
     "list": [
       {
@@ -138,7 +138,7 @@
   },
   "plugins": {
     "live-player-plugin": {
-        "version": "1.1.8",
+        "version": "1.1.10",
         "provider": "wx2b03c6e691cd7370"
     }
   },

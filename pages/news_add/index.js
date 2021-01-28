@@ -136,19 +136,20 @@ Page({
         avatar: app.globalData.userInfo.avatar,
         level: app.globalData.userInfo.level,
       }
-      console.log(newDataObj)
       addArticle(newDataObj).then(res=>{
-        console.log(res);
         if(res.status == 200){
-          wx.navigateBack({
-            delta: 1
-          })
+          Util.Tips({ title: '恭喜你发布成功，审核通过后可查看！'});
+          setTimeout(function(){
+            wx.navigateBack({
+              delta: 1
+            })
+          },2500)
         }else{
-          Util.Tips(res.msg);
+          Util.Tips({ title: res.msg});
         }
       });
     }else{
-      Util.Tips('标题和内容必填');
+      Util.Tips({ title: '标题和内容必填'});
     }
     
   },

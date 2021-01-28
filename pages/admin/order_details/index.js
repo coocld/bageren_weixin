@@ -75,6 +75,13 @@ Page({
   },
   /**
    * 
+   * 剪切快递单号
+  */
+ copyExpressId:function(){
+  wx.setClipboardData({data: this.data.orderInfo.delivery_id});
+},
+  /**
+   * 
    * 操作 一键改价 修改备注 打开组件
   */
   modify:function(e) {

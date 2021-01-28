@@ -1,6 +1,6 @@
 // pages/coupon-list/index.js
 import { getCouponReceive } from '../../api/user.js';
-import { getCoupons } from '../../api/api.js';
+import { getCouponsAll } from '../../api/api.js';
 
 const app = getApp();
 
@@ -60,7 +60,7 @@ Page({
     if(this.data.loadend) return false;
     if(this.data.loading) return false;
     that.setData({loading:true,loadTitle:'正在搜索'});
-    getCoupons({ page: this.data.page, limit: this.data.limit }).then(res=>{
+    getCouponsAll({ page: this.data.page, limit: this.data.limit }).then(res=>{
       var list=res.data,loadend=list.length < that.data.limit;
       var couponsList = app.SplitArray(list, that.data.couponsList);
       that.setData({ 

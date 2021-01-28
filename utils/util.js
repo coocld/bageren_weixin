@@ -391,7 +391,6 @@ const uploadImageMore=function (opt, successCallback, errorCallback) {
       var length = res.tempFilePaths.length; //总数
       var imgArr = [];
       for(let i=0; i<length; i++){
-        console.log(i)
         wx.showLoading({
           title: '正在上传图片',
         })
@@ -407,7 +406,6 @@ const uploadImageMore=function (opt, successCallback, errorCallback) {
             [TOKENNAME]: 'Bearer '+getApp().globalData.token
           },
           success: function (res) {
-            console.log(res)
             wx.hideLoading();
             if(res.statusCode == 200){
               let dataobj = res.data ? JSON.parse(res.data) : {};
@@ -424,7 +422,6 @@ const uploadImageMore=function (opt, successCallback, errorCallback) {
           }, 
           fail: function (res) {
             wx.hideLoading();
-            console.log(res)
             Tips({ title: '第'+(i+1)+'上传失败' });
           },
          
